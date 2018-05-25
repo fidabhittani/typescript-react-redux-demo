@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component renders correctly renders correctly 1`] = `
+<div
+  className="ui grid"
+>
+  <div
+    className="one column row"
+  >
+    <div
+      className="column"
+    >
+      <div
+        className="ui menu"
+      >
+        <div
+          className="header item"
+          onClick={[Function]}
+        >
+          AboutYou
+        </div>
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          Demo
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="one column row"
+  >
+    <div
+      className="column"
+    >
+      <div
+        className="body"
+      />
+    </div>
+  </div>
+</div>
+`;
