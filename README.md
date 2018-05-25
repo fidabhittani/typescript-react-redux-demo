@@ -1,6 +1,11 @@
 About you demo
 
-To run it..>
+# DEMO APP for About you.
 
+-React
+-Redux
+-Typescript
+
+-To run it..
 `npm install`
 `npm start`
