@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Products component renders correctly Renders Correctly 1`] = `
+<div
+  className="ui four column grid"
+>
+  <div
+    className="column"
+  >
+    <div
+      className="ui card"
+      href={undefined}
+      onClick={[Function]}
+    >
+      <img
+        className="ui image"
+        src="//cdn.aboutstatic.com/file/56755a972fefe61b91380e94df8481e8?quality=90&progressive=1&bg=f2f2f2&brightness=0.95&width=400&height=400"
+      />
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+        >
+          Shirt 'The Perfect Tee Large Batwing'
+        </div>
+        <div
+          className="meta"
+        >
+          Price : 
+          1990
+           - 
+          1990
+        </div>
+        <div
+          className="description"
+        >
+          LEVI'S
+        </div>
+      </div>
+      <div
+        className="extra content"
+      >
+        Quantity: 
+        some quantity
+      </div>
+    </div>
+  </div>
+</div>
+`;

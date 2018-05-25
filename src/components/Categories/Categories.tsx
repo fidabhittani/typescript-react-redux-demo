@@ -25,8 +25,6 @@ class Categories extends React.Component<IProps> {
    */
   constructor(props: IProps) {
     super(props);
-
-    this.state = {};
     this.productIdNode = React.createRef();
   }
   /**
