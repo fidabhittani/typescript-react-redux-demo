@@ -28,16 +28,7 @@ export function* request(params: any) {
      * the caller in onSuccess callback.
      */
     yield call(onSuccess, response);
-    /**
-     * When request is completed successfully we will stop
-     * the loader by issuing a stop loader action.
-     */
-    yield put(isLoading(false));
   } catch (error) {
-    /**
-     * Stop loader when an error occurs.
-     */
-    yield put(isLoading(false));
     /**
      * Here we can handle all sorts of errors being sent
      * from server and dispatch them to the reducer to
@@ -55,5 +46,11 @@ export function* request(params: any) {
      * from server api.
      */
     yield put(isMessage(message));
+  } finally {
+    /**
+     * When request is completed we will stop
+     * the loader anyway by issuing a stop loader action.
+     */
+    yield put(isLoading(false));
   }
 }
