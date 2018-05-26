@@ -10,8 +10,9 @@ describe("Categories component renders correctly", () => {
     const productIds = [
       {
         key: 3383096,
-        value: 3383096,
-        text: 3383096
+        text: 3383096,
+
+        value: 3383096
       }
     ];
     const rendered = renderer.create(<Categories productIds={productIds} />);
