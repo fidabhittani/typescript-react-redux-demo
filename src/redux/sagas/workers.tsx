@@ -4,7 +4,7 @@
  * */
 
 import { call, put } from "redux-saga/effects";
-import { setProductIds, setProducts } from "../actions";
+import { setProductIds, setProducts, sortProducts } from "../actions";
 
 import { apiHost, version2, version3 } from "../../config";
 import { formatProducts } from "../../utils/functions";
@@ -16,6 +16,7 @@ function* getProductsWorker(action: any) {
   const options = {
     *onSuccess(resp: any) {
       yield put(setProducts(formatProducts(resp) || []));
+      yield put(sortProducts("min_price"));
     },
     apiOptions: {
       url: `${apiHost}/v${version2}/getProducts?productId=${productIds}`

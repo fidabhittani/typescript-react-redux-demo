@@ -6,14 +6,13 @@ import { Container, Dimmer, Header, Loader, Message } from "semantic-ui-react";
 
 import Categories from "./Categories";
 
-import { getProductIds, getProducts } from "../redux/actions";
+import { getProductIds, getProducts, sortProducts } from "../redux/actions";
 
 import MainLayout from "./Layout";
 import Products from "./Products";
 
 export interface IState {
-  products?: any;
-  productsIds?: any;
+  sorterVal?: string;
 }
 
 class App extends React.Component<any, IState> {
@@ -21,8 +20,7 @@ class App extends React.Component<any, IState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      products: [],
-      productsIds: []
+      sorterVal: "min_price"
     };
   }
   public componentDidMount() {
@@ -31,10 +29,20 @@ class App extends React.Component<any, IState> {
 
   public getProducts = (productsIds: Array<1>) => {
     this.props.getProducts(productsIds);
+    this.setState({
+      sorterVal: "min_price"
+    });
+  };
+  public sortProductsBy = (ev: any, data: any) => {
+    this.setState({
+      sorterVal: data.value
+    });
+    this.props.sortProducts(data.value);
   };
   public render() {
     const { products, productIds, loading, loadingText, message } = this.props;
-
+    const { sorterVal } = this.state;
+    console.log(sorterVal);
     return (
       <React.Fragment>
         <Dimmer active={loading} inverted={true}>
@@ -52,7 +60,9 @@ class App extends React.Component<any, IState> {
 
             <Categories
               getProducts={this.getProducts}
+              sortProductsBy={this.sortProductsBy}
               productIds={productIds}
+              sorterVal={sorterVal}
             />
 
             <Products products={products} />
@@ -80,6 +90,7 @@ const mstp = (store: any) => {
 
 const mdtp = (dispatch: any) => ({
   getProductIds: () => dispatch(getProductIds()),
-  getProducts: (productsIds: any) => dispatch(getProducts(productsIds))
+  getProducts: (productsIds: any) => dispatch(getProducts(productsIds)),
+  sortProducts: (sortBy: string) => dispatch(sortProducts(sortBy))
 });
 export default connect(mstp, mdtp)(App);

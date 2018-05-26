@@ -8,7 +8,8 @@ import {
   IS_LOADING,
   IS_MESSAGE,
   SET_PRODUCTS,
-  SET_PRODUCTS_IDS
+  SET_PRODUCTS_IDS,
+  SORT_PRODUCTS
 } from "../utils/constants";
 
 //  Initial state of reducer
@@ -59,6 +60,17 @@ function app(state: IState = initialState, action: IAction) {
         payload = { ...payload, color: "green" };
       }
       return { ...state, message: payload };
+    case SORT_PRODUCTS:
+      const products = state.products.slice().sort((a: any, b: any) => {
+        if (a[action.payload] < b[action.payload]) {
+          return -1;
+        }
+        if (a[action.payload] > b[action.payload]) {
+          return 1;
+        }
+        return 0;
+      });
+      return { ...state, products };
     default:
       return state;
   }

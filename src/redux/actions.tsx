@@ -7,7 +7,8 @@ import {
   IS_LOADING,
   IS_MESSAGE,
   SET_PRODUCTS,
-  SET_PRODUCTS_IDS
+  SET_PRODUCTS_IDS,
+  SORT_PRODUCTS
 } from "../utils/constants";
 
 /**
@@ -67,5 +68,14 @@ export const isMessage = (payload: any) => {
   return {
     payload,
     type: IS_MESSAGE
+  };
+};
+/**
+ * Products Sort action
+ */
+export const sortProducts = (payload: string) => {
+  return {
+    payload,
+    type: SORT_PRODUCTS
   };
 };

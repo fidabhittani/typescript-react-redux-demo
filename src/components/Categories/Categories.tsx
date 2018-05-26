@@ -15,10 +15,14 @@ export interface IProps {
   getProductIds?: any;
   productIds?: IProductIds[];
   getProducts?: any;
+  sortProductsBy?: any;
+  sorterVal?: string;
 }
 
 class Categories extends React.Component<IProps> {
   public productIdNode: any;
+  public productSortNode: any;
+
   /**
    * Components constructors with basic initializations.
    * @param props
@@ -26,22 +30,22 @@ class Categories extends React.Component<IProps> {
   constructor(props: IProps) {
     super(props);
     this.productIdNode = React.createRef();
+    this.productSortNode = React.createRef();
   }
   /**
    * get products when on click get products button
    */
-  public getProducts = (event: any) => {
+  public getProducts = () => {
     const { getProducts } = this.props;
     const productIds = this.productIdNode.current.state.value || [];
     getProducts(productIds);
   };
   public render() {
-    const { productIds } = this.props;
-
+    const { productIds, sortProductsBy, sorterVal } = this.props;
     return (
       <React.Fragment>
-        <Grid columns="equal">
-          <Grid.Column>
+        <Grid>
+          <Grid.Column width={10}>
             <Dropdown
               ref={this.productIdNode}
               placeholder="Choose product ids"
@@ -52,7 +56,27 @@ class Categories extends React.Component<IProps> {
               options={productIds}
             />
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column width={3}>
+            <Dropdown
+              placeholder="Sort By"
+              fluid={true}
+              ref={this.productSortNode}
+              selection={true}
+              onChange={sortProductsBy}
+              value={sorterVal}
+              options={[
+                {
+                  text: "Price",
+                  value: "min_price"
+                },
+                {
+                  text: "Name",
+                  value: "name"
+                }
+              ]}
+            />
+          </Grid.Column>
+          <Grid.Column width={3}>
             <Button basic={true} color="violet" onClick={this.getProducts}>
               Get Products
             </Button>
