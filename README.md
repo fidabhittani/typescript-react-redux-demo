@@ -1,6 +1,6 @@
-About you demo
+Typescript react/redux demo
 
-# DEMO APP for About you.
+# DEMO APP.
 
 -React
 
