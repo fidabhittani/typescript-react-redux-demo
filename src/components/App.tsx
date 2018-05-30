@@ -51,7 +51,7 @@ class App extends React.Component<any, IState> {
 
         <MainLayout>
           <Container>
-            <Header as="h2">About You</Header>
+            <Header as="h2">TypeScript React/Redux Demo</Header>
             {message.message && (
               <Message color={message.color} size="mini">
                 {message.message}

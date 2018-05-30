@@ -20,7 +20,7 @@ export default class Layout extends React.Component<IProps> {
         <Grid.Row columns={1}>
           <Grid.Column>
             <Menu>
-              <Menu.Item header={true}>AboutYou</Menu.Item>
+              <Menu.Item header={true}>Online Store</Menu.Item>
               <Menu.Item name="demo" />
             </Menu>
           </Grid.Column>
