@@ -1,15 +1,23 @@
-Typescript react/redux demo
+# Typescript React Demo ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-# DEMO APP.
+Foobar is a Python library for dealing with word pluralization.
 
--React
+## Installation
+```
+npm install
+npm start
+```
 
--Redux
+### Requirements
+* Nodejs
+* npm
 
--Typescript
+## Demo Link
+[Heading link](https://github.com/pandao/editor.md "Heading link")
 
--To run it..
-
-`npm install`
-
-`npm start`
+## Tests
+```
+npm run test
+```
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
