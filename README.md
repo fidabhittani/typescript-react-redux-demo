@@ -19,7 +19,7 @@ npm start
 * npm
 
 ## Demo Link
-[Heading link](https://typescript-react-demo.firebaseapp.com/ "https://typescript-react-demo.firebaseapp.com/")
+[https://typescript-react-demo.firebaseapp.com/](https://typescript-react-demo.firebaseapp.com/ "https://typescript-react-demo.firebaseapp.com/")
 
 ## Tests
 ```
