@@ -1,4 +1,4 @@
-# Typescript React Demo ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
+# Typescript React Demo 
 
 This is a demo application of using Typescript react application with redux.
 
